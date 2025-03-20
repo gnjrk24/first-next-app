@@ -16,7 +16,7 @@ export function getPosts() {
     //各postファイルを読み込み、FrontMatterを解析
     const result = matter(fs.readFileSync(postPath, "utf8"));
     console.log(result);
-    return result.data;
+    return { ...result.data, id: postName.replace(/\.md$/, "") };
   });
 }
 

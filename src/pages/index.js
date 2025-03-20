@@ -12,12 +12,17 @@ export const getStaticProps = async () => {
 };
 // getStaticProps が実行されたら、Homeコンポーネントにpropsとして渡される
 export default function Home({ posts }) {
+  console.log(posts);
   return (
     <Layout pageTitle="Home">
       <Link href="/about">About</Link>
       <ul>
-        {posts.map(({ title }) => {
-          return <p>{title}</p>;
+        {posts.map(({ title, id }) => {
+          return (
+            <li>
+              <Link href={`/posts/${id}`}>{title}</Link>
+            </li>
+          );
         })}
       </ul>
     </Layout>
