@@ -25,7 +25,7 @@ export default function Post({ post }) {
   return (
     <Layout>
       <h2>{post.title}</h2>
-      <p>test</p>
+      <p>{post.createdAt}</p>
       <p>{post.content}</p>
     </Layout>
   );
